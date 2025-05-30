@@ -1,0 +1,19 @@
+# Ambiente virtuale
+.venv/
+
+# Cache di Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# File generati da Qt Designer
+ui_mainwindow.py
+
+# File di backup e temporanei
+*.log
+*.bak
+*.tmp
+
+# VS Code
+.vscode/
