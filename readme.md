@@ -48,25 +48,56 @@ pyqt5-tools designer
 ```bash
 generate_ui.bat
 ```
-Non modificare ui_mainwindow.py a mano, viene sovrascritto ogni volta!
+    Non modificare ui_mainwindow.py a mano, viene sovrascritto ogni volta!
 
+### Suggerimenti
+- Le modifiche alla logica dell'app vanno in main.py e serial_worker.py
+- Le modifiche alla GUI vanno fatte in ui_mainwindow.ui, poi ricompilate
 
+#### Freeze requirements:
+Per aggiungere nuove dipendenze
+```bash
+pip freeze > requirements.txt
+```
 
+## Creazione dell'eseguibile .exe
+Per generare un file eseguibile da distribuire senza Python:
+### 1. Installa `pyinstaller`
 
-## Installa i pacchetti con:
+Assicurati di aver attivato il venv:
 
 ```bash
-pip install -r requirements.txt
+pip install pyinstaller
 ```
+### 2. Genera il .exe
+```bash
+pyinstaller --onefile --windowed main.py
+```
+--onefile -> tutto in un unico exe
+--windowed	-> non apre il terminale quando lanci l’app (solo GUI)
+### 3. Dove si trova
+Nella cartella 
+dist/main.exe
+Puoi rinominarlo e copiarlo dove vuoi.
+
+### NOTE IMPORTANTI
+- Se l’eseguibile non parte su un altro PC, assicurati che abbia:
+
+1) le librerie di runtime C++ di Visual Studio (VC_redist)
+
+2) tutti i file esterni necessari (es. .ui compilato, file di supporto)
+
+3) Se usi file esterni, includili usando --add-data (vedi documentazione PyInstaller)
+
+
+
+
 
 ##  Avvio:
 ```bash
 python main.py
 ```
-## Freeze requirements:
-```bash
-pip freeze > requirements.txt
-```
+
 
 
 

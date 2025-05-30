@@ -17,3 +17,8 @@ ui_mainwindow.py
 
 # VS Code
 .vscode/
+
+#build
+build/
+dist/
+
