@@ -25,6 +25,11 @@ Il tasto "Export" consente di salvare i dati letti in un file .csv con le colonn
 - pyserial
 - matplotlib
 
+### Propedeuitico
+Sul terminale di VSCode dare questo comando
+```bash
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+```
 
 ### Ambiente virtuale
 Per lavorare sul progetto:
@@ -44,7 +49,7 @@ pyqt5-tools designer
 ```
 2) Salvare ui_mainwindow.ui nella root
 
-3) Esegui il file batch incluso per aggiornare ui_mainwindow.py
+3) Esegui il file batch (sul terminale del virtual enviroment) incluso per aggiornare ui_mainwindow.py
 ```bash
 generate_ui.bat
 ```
